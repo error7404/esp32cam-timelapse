@@ -173,7 +173,7 @@ void loop()
     Serial.println("");
     Serial.print("no connexion: reconecting");
     init_wifi();
-    if(WiFi.SSID() != ""){Serial.println("Reconected! (ﾉ^_^)ﾉ");}
+    if(WiFi.SSID() != ""){Serial.println("Reconected! ヽ(^o^)ノ");}
     else{Serial.println("not reconected T_T");delay(2000);}
     }
   else{
