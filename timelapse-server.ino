@@ -169,11 +169,18 @@ static esp_err_t take_send_photo()
 
 void loop()
 {
-  // TODO check Wifi and reconnect if needed
-  
+  if(WiFi.SSID() == ""){
+    Serial.println("");
+    Serial.print("no connexion: reconecting");
+    init_wifi();
+    if(WiFi.SSID() != ""){Serial.println("Reconected! (ﾉ^_^)ﾉ");}
+    else{Serial.println("not reconected T_T");delay(2000);}
+    }
+  else{
   current_millis = millis();
   if (current_millis - last_capture_millis > capture_interval) { // Take another picture
     last_capture_millis = millis();
     take_send_photo();
+  }
   }
 }
